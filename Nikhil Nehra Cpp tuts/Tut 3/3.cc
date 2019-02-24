@@ -2,16 +2,17 @@
 #include <string>
 using namespace std;
 
-#define max 50
+#define max 5
 class twostack{
 	char arr[max];
 	int top1; int top2;
 public:
-	twostack s1(){top1= -1;}
+	// 2nd stack is going to start from the middle of array
+	twostack (){top1= -1;top2=(max/2)-1;}
 	
 	void push1(char x){
 		if(top1== (max/2)-1){
-			cout<<"overflow";
+			cout<<"overflow in stack 1";
 		}
 		else{
 			arr[++top1]=x;
@@ -19,8 +20,8 @@ public:
 	}
 	
 	char pop1(){
-		if(top1==-1){
-			cout<<"underflow";
+		if(isemptystack1()){
+			cout<<"underflow in stack 1";
 			return '\0';
 		}
 		else{
@@ -33,11 +34,9 @@ public:
 		return (top1==-1) ? true :false;
 	}
 	
-	twostack s2(){top2=(max/2)-1;}        // 2nd stack is going to start from the middle of array
-	
-	void push2(char x){
+ 	void push2(char x){
 		if(top2== max-1){
-			cout<<"overflow";
+			cout<<"overflowin stack 2";
 		}
 		else{
 			arr[++top2]=x;
@@ -45,8 +44,8 @@ public:
 	}
 	
 	char pop2(){
-		if(top2==(max/2)-1){
-			cout<<"underflow";
+		if(isemptystack2()){
+			cout<<"underflow in stack 2";
 			return '\0';
 		}
 		else{
@@ -61,6 +60,15 @@ public:
 };
 
 int main(){
-	twostack s1;
-	twostack s2;
+	twostack s;
+	s.push2('a'); s.push2('b'); s.push2('c');
+	s.push1('d'); s.push1('e'); s.push1('f');
+	cout<<endl<<s.pop1()<<endl;
+	cout<<s.pop1()<<endl;
+	cout<<s.pop1()<<endl;
+	cout<<s.pop2()<<endl;
+	cout<<s.pop2()<<endl;
+	cout<<s.pop2()<<endl;
+	cout<<s.pop2();
+	return 0;
 }

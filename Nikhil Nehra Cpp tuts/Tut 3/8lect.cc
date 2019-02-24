@@ -8,8 +8,7 @@ private:
 	int front; int rear; int count;
 public:
 	cqueue(){
-		front=0;
-		rear=-1; count=0;
+		front=rear=count=0;
 	}
 	
 	void add(int x){
@@ -17,9 +16,9 @@ public:
 			cout<<"overflow";
 			return;
 		}
-		rear=(rear+1)%max;
 		arr[rear]=x;
 		++count;
+		rear=(rear+1)%max;
 		return;
 	}
 

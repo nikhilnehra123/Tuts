@@ -14,7 +14,7 @@ int main(){
 
 	int pos_sum=0;
 	for(int i=0;i<size_a;++i){
-		if(A[i]>=0){
+		if(A[i]>0){
 			pos_sum+=A[i];
 		}
 	}

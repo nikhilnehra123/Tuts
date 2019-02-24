@@ -8,7 +8,7 @@ class queue{
 public:
 	queue(){
 		front=0;
-		rear=-1;
+		rear=0;
 	}
 	
 	void add(int x){
@@ -16,7 +16,7 @@ public:
 			cout<<"overflow";
 		}
 		else{
-			arr[++rear]=x;
+			arr[rear++]=x;
 		}
 	}	
 	
@@ -33,11 +33,11 @@ public:
 	}
 
 	bool overflow(){
-		return(rear==(max-1)? true: false);
+		return(rear==max) ? true: false;
 	}
 
 	bool underflow(){
-		return ((rear<front)? true: false);
+		return ((rear==front)? true: false);
 	}
 };
 

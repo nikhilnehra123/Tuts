@@ -7,19 +7,21 @@ class stack{
 	char arr[max];
 	int top;
 public:
-	stack s(){top= -1;}
+	stack (){top= -1;}
 	
+	int count=0;
 	void push(char x){
 		if(top== max-1){
 			cout<<"overflow";
 		}
 		else{
 			arr[++top]=x;
+			++count;
 		}
 	}
 	
 	char pop(){
-		if(top==-1){
+		if(isemptystack()){
 			cout<<"underflow";
 			return '\0';
 		}
@@ -34,16 +36,17 @@ public:
 	}
 	
 	char peep(int i){
+		if(i>count){
+			cout<<"element is not there in stack";
+			return '\0';
+		}
 		return arr[top-i+1];
 	}
 };
 
-
-
-
 int main(){
-	
 	stack s;
+	s.push('a'); s.push('b'); s.push('c');
 	int i; cin>>i; // ith element from the top of the stack
 	cout<<s.peep(i);
 	

@@ -7,7 +7,7 @@ class stack{
 	char arr[max];
 	int top;
 public:
-	stack s(){top= -1;}
+	stack (){top= -1;}
 	
 	void push(char x){
 		if(top== max-1){
@@ -19,9 +19,9 @@ public:
 	}
 	
 	char pop(){
-		if(top==-1){
+		if(isemptystack()){
 			cout<<"underflow";
-			return '\0';
+			return '0';
 		}
 		else{
 			char x=arr[top--];
@@ -47,8 +47,7 @@ int main(){
 	for(int i=0;i<s1.length();++i){
 		s2.push_back(s.pop());
 	}
-	//cout<<s2;
-	
+
+	cout<<s2<<endl;
 	(s1==s2 )?cout<<"palindrome":cout<<"not palindome"; 
-	
 }

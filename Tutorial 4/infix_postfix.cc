@@ -12,6 +12,7 @@ char islower(char y){
 		return x;
 	}
 }
+// ggfs
 
 bool isalpha(char x){
 	return ((islower(x)>='a' && islower(x)<='z') /*|| (x>='A' && x<='Z'))*/? true: false);

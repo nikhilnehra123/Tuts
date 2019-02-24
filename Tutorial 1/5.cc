@@ -48,8 +48,4 @@ int main(){
 	row_address(arr,row,col);
 	cout<<"change---->";
 	col_address(arr,row,col);
-
-	
-
-	
 }

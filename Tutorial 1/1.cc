@@ -13,17 +13,17 @@ void outputArr(int arr[],int n){
 	}
 }
 
-int sum(int arr1[],int n){
+int sum(int arr[],int n){
 	int ans=0;
 	for(int i=0;i<n;++i){
-		ans+=arr1[i];
+		ans+=arr[i];
 	}
 	return ans;
 }
 
 void bubble_sort(int arr1[],int n){
-	for(int i=0;i<n-1;++i){
-		for(int j=0;j<n-1-i;++j){
+	for(int i=0;i<(n-1);++i){
+		for(int j=0;j<(n-1-i);++j){
 			if(arr1[j]>arr1[j+1]){
 				swap(arr1[j],arr1[j+1]);
 			}
@@ -49,13 +49,13 @@ int main(){
 	inputArr(arr1,n);
 	
 	int ans=sum(arr1,n);
+
+	int arr3[1000];
+	insert_reverse(arr1,arr3,n);
 	
 	bubble_sort(arr1,n);
 	int arr2[1000];
 	store(arr1,arr2,n);
-
-	int arr3[1000];
-	insert_reverse(arr1,arr3,n);
 
 	cout<<ans<<endl;
 	outputArr(arr2,n);

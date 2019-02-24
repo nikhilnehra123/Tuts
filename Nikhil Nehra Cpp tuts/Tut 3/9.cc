@@ -11,7 +11,7 @@ public:
 		front=0; rear=-1;
 	}
 
-	void addf(int x){
+	void addfront(int x){
 		if((rear-front)==(max-1)){
 			cout<<"overflow";
 			return;
@@ -30,7 +30,7 @@ public:
 		}
 	}
 
-	void addb(int x){
+	void addback(int x){
 		
 		if((rear-front)==(max-1)){
 			cout<<"overflow";
@@ -54,8 +54,8 @@ public:
 		}
 	}
 
-	int deletionb(){
-		if(front>rear){
+	int deletionback(){
+		if(emptydeque()){
 			cout<<"underflow;";
 			return 0;
 		}
@@ -64,8 +64,8 @@ public:
 		return x;
 	}
 
-	int deletionf(){
-		if(front>rear){
+	int deletionfront(){
+		if(emptydeque()){
 			cout<<"underflow;";
 			return 0;
 		}
@@ -81,16 +81,16 @@ public:
 
 int main(){
 	deque dq;
-	dq.addb(1);
-	dq.addf(2);
-	dq.addb(3);
-	dq.addf(4);
+	dq.addback(1);
+	dq.addfront(2);
+	dq.addback(3);
+	dq.addfront(4);
+	cout<<endl<<dq.emptydeque()<<endl;
+	cout<<dq.deletionback()<<endl;
+	cout<<dq.deletionfront()<<endl;
 	cout<<dq.emptydeque()<<endl;
-	cout<<dq.deletionb()<<endl;
-	cout<<dq.deletionf()<<endl;
-	cout<<dq.emptydeque()<<endl;
-	cout<<dq.deletionf()<<endl;
-	cout<<dq.deletionb()<<endl;
+	cout<<dq.deletionfront()<<endl;
+	cout<<dq.deletionback()<<endl;
 	cout<<dq.emptydeque()<<endl;
 	return 0;
 }

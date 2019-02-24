@@ -11,7 +11,7 @@ int main(){
 	for(int i=0;i<size_a;++i){
 		int ele=A[i];
 		for(int j=0;j<size_B;++j){
-			if(B[j]==ele){
+			if(ele==B[j]){
 				break;
 			}
 			

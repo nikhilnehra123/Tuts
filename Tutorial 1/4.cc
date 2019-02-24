@@ -25,9 +25,8 @@ int main(){
 			cout<<endl;
 		}
 	}
-
 	cout<<endl;
-
+// you can not declare and initialize variable size array at a time like other variables
 	int B[10]={0};
 	int C[size];
 
